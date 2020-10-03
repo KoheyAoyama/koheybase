@@ -1,12 +1,11 @@
 import React from "react"
 import "./reset.css"
-import Header from "../component/header"
+import Layout from "../component/layout"
 
 export default function Home() {
   return (
-    <div>
-      <Header></Header>
+    <Layout>
       <p>Hello! I'm Kohey!</p>
-    </div>
+    </Layout>
   )
 }

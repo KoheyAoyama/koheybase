@@ -1,0 +1,38 @@
+.container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 32px;
+    margin-top: 80px;
+}
+
+.sectionMargin {
+    height: 64px;
+}
+
+.title {
+    grid-column: 1 / 3;
+}
+
+.content {
+    grid-column: 4 / 12;
+}
+
+.profileImage {
+    width: 320px;
+    margin-bottom: 40px;
+}
+
+.myName {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bodyText {
+    margin-bottom: 16px;
+}
+
+.bioTable {
+    width: 100%;
+}
