@@ -1,0 +1,28 @@
+.header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 96px;
+    padding: 0 40px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+
+.title {
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: start;
+    align-self: center;
+}
+
+.navigation {
+    grid-row: 1;
+    grid-column: 2;
+    justify-self: end;
+    display: flex;
+    list-style: none;
+}
+
+.navigationItem {
+    align-self: center;
+    padding: 0 20px;
+}
