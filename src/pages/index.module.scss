@@ -8,10 +8,18 @@
     grid-gap: 32px;
 }
 
-.siteHeroTitle {
+.siteHeroText {
     grid-row: 1;
     grid-column: 1 / 12;
     align-self: end;
+}
+
+.siteHeroHead {
+    font-size: 4.0rem;
+}
+
+.siteHeroSubhead {
+    font-size: 2.0rem;
 }
 
 .buttonAboutMe {

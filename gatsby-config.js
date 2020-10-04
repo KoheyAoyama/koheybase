@@ -5,6 +5,15 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: `Koheybase.com`,
+    description: `UIデザイナー 青山広平のポートフォリオサイト`,
+    author: `Kohey Aoyama`,
+  },
   /* Your site config here */
-  plugins: [],
+  plugins: [
+    `gatsby-plugin-emotion`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
+  ],
 }
