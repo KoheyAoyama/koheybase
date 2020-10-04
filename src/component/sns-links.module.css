@@ -1,0 +1,11 @@
+.snsLinkList {
+    display: flex;
+}
+
+.snsLink {
+    margin-right: 8px;
+}
+
+.snsLink:last-child {
+    margin-right: 0;
+}

@@ -12,18 +12,6 @@
     margin-bottom: 24px;
 }
 
-.snsLinkList {
-    display: flex;
-}
-
-.snsLink {
-    margin-right: 8px;
-}
-
-.snsLink:last-child {
-    margin-right: 0;
-}
-
 .copyright {
     margin-top: auto;
 }
