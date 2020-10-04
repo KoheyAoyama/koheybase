@@ -1,6 +1,7 @@
 import React from "react"
 import { css } from "@emotion/core"
 import Layout from "../component/layout"
+import SEO from "../component/seo"
 import styles from "./about-me.module.scss"
 
 const BioTable = props => (
@@ -24,6 +25,10 @@ const BioTable = props => (
 export default function AboutMe() {
     return (
         <Layout>
+            <SEO
+                title="About Me"
+                description="青山広平について、自己紹介、得意分野、略歴など"
+            />
             <div className={styles.container}>
                 <h1 className={styles.title}>About Me</h1>
 
