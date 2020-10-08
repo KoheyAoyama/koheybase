@@ -69,12 +69,13 @@ export default function Home({ data }) {
 
 export const query = graphql`
   query MyQuery {
-    allMicrocmsWorks {
+    allMicrocmsWorks(sort: {fields: publishedAt, order: DESC}) {
       edges {
         node {
           title
           category
           isPrivate
+          publishedAt
         }
       }
     }
