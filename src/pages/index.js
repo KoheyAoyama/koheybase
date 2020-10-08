@@ -1,12 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import Layout from "../component/layout"
 import SnsLinks from "../component/sns-links"
 import SEO from "../component/seo"
 import styles from "./index.module.scss"
 
-const CardWork = props => (
+
+const CardWork = props => {
+  return (
   <article
     css={css`
       width: 100%;
@@ -22,12 +24,18 @@ const CardWork = props => (
         `}
         src="/" alt="" />
       <h1>{props.workTitle}</h1>
-      <p>{props.workCategory}</p>
+      {props.workCategory.map((category, index) => (
+        <p
+          css={css`
+            display: inline-block;
+          `}
+          key={index}>{category}</p>
+      ))}
     </Link>
   </article>
-)
+)}
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <Layout>
       <SEO />
@@ -50,13 +58,25 @@ export default function Home() {
       <section>
         <h3>Works</h3>
         <div className={styles.listWorks}>
-          <CardWork workTitle="SNS App" workCategory="UI/UXデザイン" />
-          <CardWork workTitle="SNS App" workCategory="UI/UXデザイン" />
-          <CardWork workTitle="SNS App" workCategory="UI/UXデザイン" />
-          <CardWork workTitle="SNS App" workCategory="UI/UXデザイン" />
-          <CardWork workTitle="SNS App" workCategory="UI/UXデザイン" />
+          {data.allMicrocmsWorks.edges.map(({ node }, index) => (
+            <CardWork key={index} workTitle={node.title} workCategory={node.category} />
+          ))}
         </div>
       </section>
     </Layout>
   )
 }
+
+export const query = graphql`
+  query MyQuery {
+    allMicrocmsWorks {
+      edges {
+        node {
+          title
+          category
+          isPrivate
+        }
+      }
+    }
+  }
+`

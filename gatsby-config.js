@@ -12,6 +12,18 @@ module.exports = {
   },
   /* Your site config here */
   plugins: [
+    {
+      resolve: 'gatsby-source-microcms',
+      options: {
+        apiKey: 'b88b29e6-1eec-4b91-912f-449d5b30bded',
+        serviceId: 'koheybase',
+        apis: [
+          {
+            endpoint: 'works',
+          },
+        ],
+      },
+    },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
