@@ -1,39 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { css } from "@emotion/core"
 import Layout from "../component/layout"
 import SnsLinks from "../component/sns-links"
+import CardItem from "../component/card-item"
 import SEO from "../component/seo"
 import styles from "./index.module.scss"
-
-
-const CardWork = props => {
-  return (
-  <article
-    css={css`
-      width: 100%;
-      height: 240px;
-    `}
-  >
-    <Link to="/">
-      <img
-        css={css`
-          margin-bottom: 8px;
-          padding-top: 75%;
-          background: rgba(0,0,0,.10);
-        `}
-        src="/" alt="" />
-      <h1>{props.workTitle}</h1>
-      {props.workCategory.map((category, index) => (
-        <p
-          css={css`
-            display: inline-block;
-          `}
-          key={index}>{category}</p>
-      ))}
-    </Link>
-  </article>
-)}
 
 export default function Home({ data }) {
   return (
@@ -55,11 +26,11 @@ export default function Home({ data }) {
         </div>
       </section>
 
-      <section>
-        <h3>Works</h3>
+      <section className={styles.works}>
+        <h3 className={styles.sectionHead}>Works</h3>
         <div className={styles.listWorks}>
           {data.allMicrocmsWorks.edges.map(({ node }, index) => (
-            <CardWork key={index} workTitle={node.title} workCategory={node.category} />
+            <CardItem key={index} workTitle={node.title} workCategory={node.category} thumbnail={node.thumbnail} />
           ))}
         </div>
       </section>
@@ -76,6 +47,9 @@ export const query = graphql`
           category
           isPrivate
           publishedAt
+          thumbnail {
+            url
+          }
         }
       }
     }

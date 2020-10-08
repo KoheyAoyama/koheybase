@@ -1,0 +1,50 @@
+.cardItem {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+
+    &__thumbnailWrapper {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-bottom: 8px;
+        border-radius: 16px 16px 0 0;
+        background: rgba(0,0,0,.04);
+
+        &:before {
+            content: '';
+            display: block;
+            padding-top: 56.25%;
+        }
+    }
+    &__thumbnail {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px 16px 0 0;
+    }
+
+    &__wrapper {
+        padding: 8px 12px 24px 12px;
+    }
+
+    &__title {
+        margin-left: 3px;
+        margin-bottom: 12px;
+        color: rgba(0,0,0,.87);
+    }
+
+    &__tag {
+        display: inline-block;
+        margin: 0 4px 6px 0;
+        padding: 4px 8px;
+        border-radius: 100px;
+        border: solid 1px rgba(0,0,0,.12);
+        color: rgba(0,0,0,.54);
+        font-size: 1.2rem;
+    }
+}
