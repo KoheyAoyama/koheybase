@@ -8,10 +8,10 @@ export default function Header() {
             <h1 className={styles.title}>Koheybase.com</h1>
             <ul className={styles.navigation}>
                 <li className={styles.navigationItem}>
-                    <Link to="/">Home</Link>
+                    <Link className={styles.navigationItemText} to="/">Home</Link>
                 </li>
                 <li className={styles.navigationItem}>
-                    <Link to="/about-me/">About Me</Link>
+                    <Link className={styles.navigationItemText} to="/about-me/">About Me</Link>
                 </li>
             </ul>
         </header>

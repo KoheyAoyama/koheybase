@@ -3,9 +3,22 @@
 }
 
 .snsLink {
-    margin-right: 8px;
+    margin-right: 32px;
+    font-size: 48px;
 }
 
 .snsLink:last-child {
     margin-right: 0;
+}
+
+.iconFacebook {
+    color: #1877F2;
+}
+
+.iconLinkedin {
+    color: #0077B5;
+}
+
+.iconGithub {
+    color: #333333;
 }

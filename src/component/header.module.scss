@@ -5,7 +5,7 @@
     display: grid;
     grid-template-columns: 240px 1fr;
     grid-template-rows: 96px;
-    padding: 0 40px;
+    padding: 0 64px;
     background-color: rgba(255, 255, 255, 1.0);
     box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 8px;
 }
@@ -28,4 +28,10 @@
 .navigationItem {
     align-self: center;
     padding: 0 20px;
+}
+
+.navigationItemText {
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: black;
 }

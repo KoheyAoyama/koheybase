@@ -30,7 +30,12 @@ export default function Home({ data }) {
         <h3 className={styles.sectionHead}>Works</h3>
         <div className={styles.listWorks}>
           {data.allMicrocmsWorks.edges.map(({ node }, index) => (
-            <CardItem key={index} workTitle={node.title} workCategory={node.category} thumbnail={node.thumbnail} />
+            <CardItem key={index}
+              workTitle={node.title}
+              workCategory={node.category}
+              thumbnail={node.thumbnail}
+              id={node.id}
+            />
           ))}
         </div>
       </section>
@@ -39,7 +44,7 @@ export default function Home({ data }) {
 }
 
 export const query = graphql`
-  query MyQuery {
+  {
     allMicrocmsWorks(sort: {fields: publishedAt, order: DESC}) {
       edges {
         node {
@@ -50,6 +55,7 @@ export const query = graphql`
           thumbnail {
             url
           }
+          id
         }
       }
     }
