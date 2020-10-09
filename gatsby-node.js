@@ -19,7 +19,7 @@ exports.createPages = async ({ graphql, actions }) => {
         throw result.errors
     }
 
-    result.data.allMicrocmsWorks.edges.forEach(edge =>{
+    result.data.allMicrocmsWorks.edges.map(edge => {
         createPage({
             path: `works/${edge.node.id}`,
             component: path.resolve(
