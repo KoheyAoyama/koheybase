@@ -19,18 +19,21 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "babel-plugin-styled-components": "^1.11.1",
     "gatsby": "^2.24.66",
     "gatsby-plugin-emotion": "^4.3.12",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-react-helmet": "^3.3.12",
     "gatsby-plugin-sass": "^2.3.14",
+    "gatsby-plugin-styled-components": "^3.3.14",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.3.34",
     "gatsby-source-microcms": "^1.0.1",
     "node-sass": "^4.14.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "prettier": "2.1.2"

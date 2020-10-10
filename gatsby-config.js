@@ -24,7 +24,7 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-emotion`,
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
   ],
