@@ -39,7 +39,7 @@ function SEO({ description, lang, meta, title }) {
 }
 
 SEO.defaultProps = {
-    lang: `jp`,
+    lang: `ja-jp`,
     meta: [],
     title: `Koheybase.com`,
     description: ``,
