@@ -3,9 +3,9 @@ const path = require("path")
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
 
-    const result = await graphql(`
+    return graphql(`
     {
-        allMicrocmsWorks(sort: {fields: publishedAt, order: DESC}) {
+        allMicrocmsWorks {
             edges {
                 node {
                     id
@@ -13,21 +13,19 @@ exports.createPages = async ({ graphql, actions }) => {
             }
         }
     }
-    `)
+    `).then(result => {
+        if (result.errors){
+            throw result.errors
+        }
 
-    if (result.errors) {
-        throw result.errors
-    }
-
-    result.data.allMicrocmsWorks.edges.map(edge => {
-        createPage({
-            path: `works/${edge.node.id}`,
-            component: path.resolve(
-                "./src/templates/works-template.js"
-            ),
-            context: {
-                id: edge.node.id,
-            },
+        result.data.allMicrocmsWorks.edges.map(edge => {
+            createPage({
+                path: `works/${edge.node.id}`,
+                component: path.resolve("./src/templates/works-template.js"),
+                context: {
+                    id: edge.node.id,
+                },
+            })
         })
     })
 }

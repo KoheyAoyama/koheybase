@@ -34,6 +34,7 @@ export default function Home({ data }) {
               workTitle={node.title}
               workCategory={node.category}
               thumbnail={node.thumbnail}
+              isPrivate={node.isPrivate}
               id={node.id}
             />
           ))}

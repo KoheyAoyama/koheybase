@@ -5,7 +5,9 @@ import styles from "./header.module.scss"
 export default function Header() {
     return (
         <header className={styles.header}>
-            <h1 className={styles.title}>Koheybase.com</h1>
+            <h1 className={styles.title}>
+                <Link to="/">Koheybase.com</Link>
+            </h1>
             <ul className={styles.navigation}>
                 <li className={styles.navigationItem}>
                     <Link className={styles.navigationItemText} to="/">Home</Link>
