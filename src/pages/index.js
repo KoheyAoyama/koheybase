@@ -38,6 +38,7 @@ export default function Home({ data }) {
               id={node.id}
             />
           ))}
+          <div className={styles.listPlaceholder}></div>
         </div>
       </section>
     </Layout>
