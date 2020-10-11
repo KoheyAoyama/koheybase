@@ -1,26 +1,28 @@
 import React from "react"
-import { css } from "@emotion/core"
+import styled from "styled-components"
 import Layout from "../component/layout"
 import SEO from "../component/seo"
 import styles from "./about-me.module.scss"
 
-const BioTable = props => (
-    <tr>
-        <div
-            css={css`
-                border-bottom: solid 1px rgba(0,0,0,.12);
-                display: grid;
-                grid-template-columns: 40% 40% 20%;
-                grid-template-rows: 64px;
-                align-items: center;
-            `}
-        >
-            <td>{props.work}</td>
-            <td>{props.jobTitle}</td>
-            <td>{props.term}</td>
-        </div>
-    </tr>
-)
+const BioTable = props => {
+    const TableWrapper = styled.div`
+        border-bottom: solid 1px rgba(0,0,0,.12);
+        display: grid;
+        grid-template-columns: 40% 40% 20%;
+        grid-template-rows: 64px;
+        align-items: center;
+    `
+
+    return (
+        <tr>
+            <TableWrapper>
+                <td>{props.work}</td>
+                <td>{props.jobTitle}</td>
+                <td>{props.term}</td>
+            </TableWrapper>
+        </tr>
+    )
+}
 
 export default function AboutMe() {
     return (
