@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import twitterCard from "../../static/twitter_card_large.png"
 
 function SEO({ description, lang, meta, title }) {
     const { site } = useStaticQuery (
@@ -26,8 +27,8 @@ function SEO({ description, lang, meta, title }) {
             htmlAttributes={{
                 lang,
             }}
-            title={metaTitle}
-            titleTemplate={`%s | ${site.siteMetadata.title}`}
+            title = {metaTitle}
+            titleTemplate = {`%s | ${site.siteMetadata.title}`}
             meta={[
                 {
                     name: `description`,
@@ -51,7 +52,7 @@ function SEO({ description, lang, meta, title }) {
                 },
                 {
                     name: `twitter:image`,
-                    content: `../../static/twitter_card_large.png`,
+                    content: twitterCard,
                 },
             ].concat(meta)}
         />
