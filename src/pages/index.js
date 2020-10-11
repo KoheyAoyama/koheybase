@@ -13,7 +13,6 @@ export default function Home({ data }) {
       <SiteHero />
 
       <WorksList data={ data } />
-
       
     </Layout>
   )
