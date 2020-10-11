@@ -9,6 +9,9 @@ module.exports = {
     title: `Koheybase.com`,
     description: `UIデザイナー 青山広平のポートフォリオサイト`,
     author: `Kohey Aoyama`,
+    siteUrl: `https://koheybase.com/`,
+    url: 'https://koheybase.com/',
+    ogpImage: 'twitter_card_large.png'
   },
   /* Your site config here */
   plugins: [
