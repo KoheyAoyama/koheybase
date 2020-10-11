@@ -1,6 +1,6 @@
 import React from "react"
-import SnsLinks from "./sns-links"
 import styled from "styled-components"
+import SnsLinks from "./sns-links"
 
 const Footer = () => (
     <Body>
