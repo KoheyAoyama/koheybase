@@ -2,17 +2,15 @@ import React from "react"
 import SnsLinks from "./sns-links"
 import styled from "styled-components"
 
-const Footer = () => {
-    return (
-        <Block>
-            <FooterHead><span role="img" aria-label="Greeting hands">🙌</span>話しかける</FooterHead>
-            <SnsLinks />
-            <FooterCopyright>© Kohey Aoyama 2020</FooterCopyright>
-        </Block>
-    )
-}
+const Footer = () => (
+    <Body>
+        <FooterHead><span role="img" aria-label="Greeting hands">🙌</span>話しかける</FooterHead>
+        <SnsLinks />
+        <FooterCopyright>© Kohey Aoyama 2020</FooterCopyright>
+    </Body>
+)
 
-const Block = styled.footer`
+const Body = styled.footer`
     width: 100%;
     height: 240px;
     margin-top: 120px;
