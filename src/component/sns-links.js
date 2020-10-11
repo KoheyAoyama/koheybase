@@ -7,17 +7,17 @@ const SnsLinks = () => (
     <Root>
         <SnsItem>
             <a href="https://www.facebook.com/kohei5342" target="_blank" rel="noopener noreferrer">
-                <SnsIcon icon={faFacebook} facebook />
+                <SnsIcon icon={faFacebook} facebook="true" />
             </a>
         </SnsItem>
         <SnsItem>
             <a href="https://www.linkedin.com/in/kohei-aoyama-8b3747130/" target="_blank" rel="noopener noreferrer">
-                <SnsIcon icon={faLinkedin} linkedin />
+                <SnsIcon icon={faLinkedin} linkedin="true" />
             </a>
         </SnsItem>
         <SnsItem>
             <a href="https://github.com/KoheyAoyama" target="_blank" rel="noopener noreferrer">
-                <SnsIcon icon={faGithub} github />
+                <SnsIcon icon={faGithub} github="true" />
             </a>
         </SnsItem>
     </Root>

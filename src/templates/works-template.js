@@ -11,6 +11,7 @@ const ArticlePost = props => {
         <Layout>
             <SEO
                 title={post.title}
+                postThumbnail={post.thumbnail.url}
             />
             <Root>
                 <ContentWrapper>
