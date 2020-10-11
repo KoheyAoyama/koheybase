@@ -21,8 +21,9 @@ const SiteHero = () => (
 )
 
 const Root = styled.section`
+position: relative;
 width: 100%;
-height: 720px;
+height: 70vh;
 padding: 0 16px;
 display: grid;
 grid-template-rows: 1fr 1fr;
