@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebook, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 
 const SnsLinks = () => (
-    <SnsList>
+    <Root>
         <SnsItem>
             <a href="https://www.facebook.com/kohei5342">
                 <SnsIcon icon={faFacebook} facebook />
@@ -20,10 +20,10 @@ const SnsLinks = () => (
                 <SnsIcon icon={faGithub} github />
             </a>
         </SnsItem>
-    </SnsList>
+    </Root>
 )
 
-const SnsList = styled.ul`
+const Root = styled.ul`
     display: flex;
 `
 

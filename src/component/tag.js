@@ -2,10 +2,10 @@ import React from "react"
 import styled from "styled-components"
 
 const Tag = (props) => (
-        <Body>{props.content}</Body>
+        <Root>{props.content}</Root>
 )
 
-const Body = styled.p`
+const Root = styled.p`
     display: inline-block;
     margin: 0 4px 6px 0;
     padding: 4px 8px;

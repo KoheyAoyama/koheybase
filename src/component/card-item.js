@@ -14,7 +14,7 @@ const CardItem = (props) => {
     const thumbnailUrl = switchThumbnail(props.isPrivate, props.thumbnail.url)
     
     return (
-        <CardBody>
+        <Root>
             <BodyWrapper to={`/works/${props.id}`}>
                 <ThumbnailWrapper alt="">
                     <ThumbnailImg src={thumbnailUrl} alt="hoge" />
@@ -26,11 +26,11 @@ const CardItem = (props) => {
                     ))}
                 </DescriptionWrapper>
             </BodyWrapper>
-        </CardBody>
+        </Root>
     )
 }
 
-const CardBody = styled.article`
+const Root = styled.article`
     width: 100%;
     height: auto;
     border-radius: 16px;

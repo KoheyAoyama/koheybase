@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 const Header = () => (
-    <Body>
+    <Root>
         <HeaderTitle>
             <Link to="/">Koheybase.com</Link>
         </HeaderTitle>
@@ -15,10 +15,10 @@ const Header = () => (
                 <NavigationText to="/about-me/">About Me</NavigationText>
             </NavigationItem>
         </Header__Navigation>
-    </Body>
+    </Root>
 )
 
-const Body = styled.header`
+const Root = styled.header`
     position: fixed;
     z-index: 999;
     width: 100%;

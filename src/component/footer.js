@@ -3,14 +3,14 @@ import styled from "styled-components"
 import SnsLinks from "./sns-links"
 
 const Footer = () => (
-    <Body>
+    <Root>
         <FooterHead><span role="img" aria-label="Greeting hands">🙌</span>話しかける</FooterHead>
         <SnsLinks />
         <FooterCopyright>© Kohey Aoyama 2020</FooterCopyright>
-    </Body>
+    </Root>
 )
 
-const Body = styled.footer`
+const Root = styled.footer`
     width: 100%;
     height: 240px;
     margin-top: 120px;
