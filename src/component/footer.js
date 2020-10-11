@@ -1,13 +1,34 @@
 import React from "react"
 import SnsLinks from "./sns-links"
-import styles from "./footer.module.scss"
+import styled from "styled-components"
 
-export default function Footer() {
+const Footer = () => {
     return (
-        <footer className={styles.footer}>
-            <p className={styles.head}><span role="img" aria-label="Greeting hands">🙌</span>話しかける</p>
+        <Block>
+            <FooterHead><span role="img" aria-label="Greeting hands">🙌</span>話しかける</FooterHead>
             <SnsLinks />
-            <small className={styles.copyright}>© Kohey Aoyama 2020</small>
-        </footer>
+            <FooterCopyright>© Kohey Aoyama 2020</FooterCopyright>
+        </Block>
     )
 }
+
+const Block = styled.footer`
+    width: 100%;
+    height: 240px;
+    margin-top: 120px;
+    padding: 40px 0 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+const FooterHead = styled.p`
+    margin-bottom: 24px;
+    font-size: 2.4rem;
+`
+
+const FooterCopyright = styled.small`
+    margin-top: auto;
+`
+
+export default Footer
