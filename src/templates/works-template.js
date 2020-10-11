@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
+import SEO from "../component/seo"
 import Layout from "../component/layout"
 import Tag from "../component/tag"
 
@@ -8,6 +9,9 @@ const ArticlePost = props => {
     const post = props.data.microcmsWorks
     return (
         <Layout>
+            <SEO
+                title={post.title}
+            />
             <Root>
                 <ContentWrapper>
                     <PostTitle>{post.title}</PostTitle>
