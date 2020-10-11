@@ -33,6 +33,26 @@ function SEO({ description, lang, meta, title }) {
                     name: `description`,
                     content: metaDescription,
                 },
+                {
+                    name: `twitter:card`,
+                    content: 'summary_large_image',
+                },
+                {
+                    name: `twitter:site`,
+                    content: '@_endoftrack',
+                },
+                {
+                    name: `twitter:title`,
+                    content: metaTitle,
+                },
+                {
+                    name: `twitter:description`,
+                    content: metaDescription,
+                },
+                {
+                    name: `twitter:image`,
+                    content: `../../static/twitter_card_large.png`,
+                },
             ].concat(meta)}
         />
     )
