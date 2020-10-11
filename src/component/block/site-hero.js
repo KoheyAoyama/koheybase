@@ -61,7 +61,7 @@ color: white;
 
 const HeroSnsLinks = styled.div`
 grid-row: 2;
-grid-column: 4 / 7;
+grid-column: 4 / span 9;
 height: 56px;
 text-align: center;
 line-height: 56px;

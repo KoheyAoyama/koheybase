@@ -6,17 +6,17 @@ import { faFacebook, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-i
 const SnsLinks = () => (
     <Root>
         <SnsItem>
-            <a href="https://www.facebook.com/kohei5342">
+            <a href="https://www.facebook.com/kohei5342" target="_blank" rel="noopener noreferrer">
                 <SnsIcon icon={faFacebook} facebook />
             </a>
         </SnsItem>
         <SnsItem>
-            <a href="https://www.linkedin.com/in/kohei-aoyama-8b3747130/">
+            <a href="https://www.linkedin.com/in/kohei-aoyama-8b3747130/" target="_blank" rel="noopener noreferrer">
                 <SnsIcon icon={faLinkedin} linkedin />
             </a>
         </SnsItem>
         <SnsItem>
-            <a href="https://github.com/KoheyAoyama">
+            <a href="https://github.com/KoheyAoyama" target="_blank" rel="noopener noreferrer">
                 <SnsIcon icon={faGithub} github />
             </a>
         </SnsItem>
