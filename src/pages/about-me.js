@@ -2,7 +2,63 @@ import React from "react"
 import styled from "styled-components"
 import Layout from "../component/layout"
 import SEO from "../component/seo"
-import styles from "./about-me.module.scss"
+
+const AboutMe = () => (
+    <Layout>
+        <SEO
+            title="About Me"
+            description="青山広平について、自己紹介、得意分野、略歴など"
+        />
+
+        <Root>
+            <PageTitle>About Me</PageTitle>
+
+            <ContentWrapper>
+                <Profileimage src={`../../img_myProfile.png`} alt="青山広平のプロフィール画像" />
+                
+                <ProfileName>
+                    青山広平
+                    <ProfleNameEn>Kohey Aoyama</ProfleNameEn>
+                </ProfileName>
+
+                <ProfileDescription>
+                    <p>千葉県在住、都内ベンチャー企業に所属のUIデザイナー。</p>
+                    <Margin32 />
+                    <p>サービスに特化した、効果的で拡張性の高いUIキットを最速で構築。開発スピードが優先されるフェーズにおいてもクオリティを疎かにせず、双方を両立したUIデザインを提供します。これにより、特に新規事業でMVPを必要とするようなフェーズで強力にサポートできます。</p>
+                    <Margin32 />
+
+                    <BodySubHead>【UIデザイン】</BodySubHead>
+                    <ul>
+                        <li>サービスのコア体験を高効率でユーザーに提供するUIデザインの構築</li>
+                        <li>サービスのグロース支援</li>
+                    </ul>
+                    <Margin32 />
+
+                    <BodySubHead>【WordPress制作】</BodySubHead>
+                    <ul>
+                        <li>フルスクラッチでのオリジナルテーマ制作</li>
+                        <li>サイト公開後の運用に最適化したCMSコンテンツ設計</li>
+                        <li>テンプレートエンジンやFLOCSSによるCSS設計を利用した開発効率の高いサイト構築</li>
+                    </ul>
+                    <Margin32 />
+
+                </ProfileDescription>
+
+                <Margin32 />
+                <Margin32 />
+
+                <BodySubHead>略歴</BodySubHead>
+
+                <ProfileBiography>
+                    <BioTable work="Nanameue inc." jobTitle="UIデザイナー" term="2019 - 現在" />
+                    <BioTable work="デジタルハリウッドSTUDIO上野" jobTitle="Webデザイン専攻" term="2019" />
+                    <BioTable work="機械系製造メーカー2社" jobTitle="研究開発・技術設計" term="2011 - 2019" />
+                    <BioTable work="鶴岡工業高等専門学校" jobTitle="機械電気システム工学専攻" term="2005 - 2011" />
+                </ProfileBiography>
+            </ContentWrapper>
+        </Root>
+    </Layout>
+)
 
 const BioTable = props => {
     const TableWrapper = styled.div`
@@ -24,56 +80,61 @@ const BioTable = props => {
     )
 }
 
-export default function AboutMe() {
-    return (
-        <Layout>
-            <SEO
-                title="About Me"
-                description="青山広平について、自己紹介、得意分野、略歴など"
-            />
-            <div className={styles.container}>
-                <h1 className={styles.title}>About Me</h1>
+const Root = styled.div`
+padding: 0 16px;
+display: grid;
+grid-template-rows: 1fr;
+grid-template-columns: repeat(12, 1fr);
+grid-gap: 32px;
+margin-top: 80px;
+`
 
-                <div className={styles.content}>
-                    <img className={styles.profileImage} src={`../../img_myProfile.png`} alt="青山広平のプロフィール画像" />
-                    
-                    <h2 className={styles.myName}>
-                        青山広平
-                        <span className={styles.myNameEn}>Kohey Aoyama</span>
-                    </h2>
+const PageTitle = styled.h1`
+grid-column: 1 / span 3;
+font-size: 4.0rem;
+font-weight: bold;
+`
 
-                    <div className={styles.bodyText}>
-                        <p className={styles.bodyTextParagraph}>千葉県在住、都内ベンチャー企業に所属のUIデザイナー。</p>
-                        <p className={styles.bodyTextParagraph}>サービスに特化した、効果的で拡張性の高いUIキットを最速で構築。開発スピードが優先されるフェーズにおいてもクオリティを疎かにせず、双方を両立したUIデザインを提供します。これにより、特に新規事業でMVPを必要とするようなフェーズで強力にサポートできます。</p>
-                        
-                        <h3 className={styles.bodyTextSubhead}>【UIデザイン】</h3>
+const ContentWrapper = styled.div`
+grid-column: 4 / 12;
+`
 
-                        <ul className={styles.bodyTextParagraph}>
-                            <li>サービスのコア体験を高効率でユーザーに提供するUIデザインの構築</li>
-                            <li>サービスのグロース支援</li>
-                        </ul>
+const Profileimage = styled.img`
+width: 320px;
+height: 320px;
+margin-bottom: 40px;
+object-fit: contain;
+`
 
-                        <h3 className={styles.bodyTextSubhead}>【WordPress制作】</h3>
+const ProfileName = styled.h2`
+margin-bottom: 40px;
+display: flex;
+flex-direction: column;
+font-size: 2.4rem;
+font-weight: bold;
+`
 
-                        <ul className={styles.bodyTextParagraph}>
-                            <li>フルスクラッチでのオリジナルテーマ制作</li>
-                            <li>サイト公開後の運用に最適化したCMSコンテンツ設計</li>
-                            <li>テンプレートエンジンやFLOCSSによるCSS設計を利用した開発効率の高いサイト構築</li>
-                        </ul>
-                    </div>
+const ProfleNameEn = styled.span`
+margin-top: 8px;
+font-size: 1.6rem;
+font-weight: normal;
+`
 
-                    <div className={styles.sectionMargin}></div>
+const ProfileDescription = styled.div`
+line-height: 2.0;
+`
 
-                    <h3 className={styles.bodyTextSubhead}>略歴</h3>
+const BodySubHead = styled.h3`
+margin-bottom: 8px;
+font-weight: bold;
+`
 
-                    <table className={styles.bioTable}>
-                        <BioTable work="Nanameue inc." jobTitle="UIデザイナー" term="2019 - 現在" />
-                        <BioTable work="デジタルハリウッドSTUDIO上野" jobTitle="Webデザイン専攻" term="2019" />
-                        <BioTable work="機械系製造メーカー2社" jobTitle="研究開発・技術設計" term="2011 - 2019" />
-                        <BioTable work="鶴岡工業高等専門学校" jobTitle="機械電気システム工学専攻" term="2005 - 2011" />
-                    </table>
-                </div>
-            </div>
-        </Layout>
-    )
-}
+const ProfileBiography = styled.table`
+width: 100%;
+`
+
+const Margin32 = styled.div`
+height: 32px;
+`
+
+export default AboutMe
