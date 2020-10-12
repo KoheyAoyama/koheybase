@@ -1,10 +1,13 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useState } from "react"
 import { Link } from "gatsby"
 import Media from "react-media"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { MediaQuery } from "../utils/mediaquery"
 
 const Header = () => {
+    const [navbarOpen, setNavbarOpen] = useState(false)
+    console.log(navbarOpen)
+
     return (
         <Root>
             <HeaderTitle>
@@ -18,11 +21,47 @@ const Header = () => {
                 {matches => (
                     <Fragment>
                         {matches.small &&
-                            <DrawerIcon>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </DrawerIcon>
+                            <div>
+                                <div
+                                    navbarOpen={navbarOpen}
+                                    onClick={()=> setNavbarOpen(!navbarOpen)}
+                                >
+                                    {navbarOpen ? 
+                                        <DrawerIcon>
+                                            <span open />
+                                            <span open />
+                                            <span open />
+                                        </DrawerIcon>
+                                        :
+                                        <DrawerIcon>
+                                            <span />
+                                            <span />
+                                            <span />
+                                        </DrawerIcon>
+                                    }
+                                </div>
+
+                                {navbarOpen ? 
+                                    <Header__Navigation open >
+                                        <NavigationItem >
+                                            <NavigationText to="/">Home</NavigationText>
+                                        </NavigationItem>
+                                        <NavigationItem>
+                                            <NavigationText to="/about-me/">About Me</NavigationText>
+                                        </NavigationItem>
+                                    </Header__Navigation>
+                                    :
+                                    <Header__Navigation>
+                                        <NavigationItem>
+                                            <NavigationText to="/">Home</NavigationText>
+                                        </NavigationItem>
+                                        <NavigationItem>
+                                            <NavigationText to="/about-me/">About Me</NavigationText>
+                                        </NavigationItem>
+                                    </Header__Navigation>
+                                }
+                                
+                            </div>
                         }
                         {matches.large &&
                             <Header__Navigation>
@@ -51,7 +90,7 @@ const Root = styled.header`
     align-items: center;
     padding: 0 64px;
     background-color: rgba(255, 255, 255, 1.0);
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 8px;
+    box-shadow: rgba(0, 0, 0, 0.10) 0px 2px 8px;
 
     ${MediaQuery()`
         height: 72px;
@@ -73,16 +112,42 @@ const HeaderTitle = styled.h1`
 `
 
 const Header__Navigation = styled.ul`
-    grid-row: 1;
-    grid-column: 2;
-    justify-self: end;
     display: flex;
     list-style: none;
+
+    ${MediaQuery()`
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        z-index: 999;
+        width: 100vw;
+        height: 20vh;
+        padding-top: 16px;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 1.0);
+        box-shadow: rgba(0, 0, 0, 0.10) 0px 2px 8px;
+    `}
+
+    ${props => props.open && css`
+        display: block !important;
+    `}
 `
 
 const NavigationItem = styled.li`
     align-self: center;
     padding: 0 20px;
+
+    ${MediaQuery()`
+        display: block;
+        width: 100%;
+        height: auto;
+        line-height: 48px;
+
+        ${props => props.open && css`
+            display: block;
+        `}
+    `}
 `
 
 const NavigationText = styled(props => <Link {...props} />)`
@@ -92,8 +157,8 @@ const NavigationText = styled(props => <Link {...props} />)`
 `
 
 const DrawerIcon = styled.div`
-    width: 32px;
-    height: 24px;
+    width: 8.5vw;
+    height: 6.4vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

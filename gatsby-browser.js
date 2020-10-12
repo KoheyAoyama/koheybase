@@ -1,2 +1,2 @@
-import "./src/styles/reset.scss"
-import "./src/styles/grobal.scss"
+require('./src/styles/reset.scss')
+require('./src/styles/grobal.scss')
