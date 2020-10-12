@@ -43,11 +43,11 @@ const Header = () => {
 
                                 {navbarOpen ? 
                                     <Header__Navigation open >
-                                        <NavigationItem >
-                                            <NavigationText to="/">Home</NavigationText>
+                                        <NavigationItem open >
+                                            <NavigationText to="/" >Home</NavigationText>
                                         </NavigationItem>
-                                        <NavigationItem>
-                                            <NavigationText to="/about-me/">About Me</NavigationText>
+                                        <NavigationItem open >
+                                            <NavigationText to="/about-me/" >About Me</NavigationText>
                                         </NavigationItem>
                                     </Header__Navigation>
                                     :
@@ -95,6 +95,7 @@ const Root = styled.header`
     ${MediaQuery()`
         height: 72px;
         padding: 0 16px;
+        box-shadow: none;
     `}
 `
 
@@ -116,21 +117,20 @@ const Header__Navigation = styled.ul`
     list-style: none;
 
     ${MediaQuery()`
-        display: none;
         position: absolute;
-        top: 72px;
+        top: -90px;
         left: 0;
-        z-index: 999;
+        z-index: -1;
         width: 100vw;
         height: 20vh;
         padding-top: 16px;
         flex-direction: column;
-        background-color: rgba(255, 255, 255, 1.0);
+        background-color: white;
         box-shadow: rgba(0, 0, 0, 0.10) 0px 2px 8px;
     `}
 
     ${props => props.open && css`
-        display: block !important;
+        top: 72px !important;
     `}
 `
 
@@ -143,10 +143,11 @@ const NavigationItem = styled.li`
         width: 100%;
         height: auto;
         line-height: 48px;
+        opacity: 0;
+    `}
 
-        ${props => props.open && css`
-            display: block;
-        `}
+    ${props => props.open && css`
+        opacity: 1 !important;
     `}
 `
 
