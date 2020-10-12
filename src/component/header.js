@@ -162,8 +162,8 @@ const NavigationText = styled(props => <Link {...props} />)`
 `
 
 const DrawerIcon = styled.div`
-    width: 8.5vw;
-    height: 6.4vw;
+    width: 6.4vw;
+    height: 4.8vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
