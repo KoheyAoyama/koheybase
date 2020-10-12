@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import CardItem from "../card-item"
 import WorksPlaceholder from "../Works-placeholder"
+import { MediaQuery } from "../../utils/mediaquery"
 
 const WorksList = ({ data }) => (
 <Root>
@@ -34,7 +35,11 @@ margin-bottom: 32px;
 const List = styled.div`
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-grid-gap: 32px
+grid-gap: 32px;
+
+${MediaQuery()`
+    grid-template-columns: 1fr;
+`}
 `
 
 export default WorksList

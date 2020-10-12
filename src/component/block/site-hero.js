@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import SnsLinks from "../sns-links"
+import { MediaQuery } from "../../utils/mediaquery"
 
 const SiteHero = () => (
     <Root>
@@ -29,12 +30,22 @@ display: grid;
 grid-template-rows: 1fr 1fr;
 grid-template-columns: repeat(12, 1fr);
 grid-gap: 32px;
+
+${MediaQuery()`
+  padding: 48px 16px 0 16px;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 1fr;
+`}
 `
 
 const HeroTesxtWrapper = styled.div`
 grid-row: 1;
 grid-column: 1 / 12;
-align-self: end;
+align-self: end;\
+
+${MediaQuery()`
+  grid-column: 1;
+`}
 `
 
 const HeroTitle = styled.h2`
@@ -58,6 +69,11 @@ border-radius: 56px;
 background: black;
 font-size: 2.0rem;
 color: white;
+
+${MediaQuery()`
+  grid-column: 1;
+  align-self: end;
+`}
 `
 
 const HeroSnsLinks = styled.div`
@@ -66,6 +82,12 @@ grid-column: 4 / span 9;
 height: 56px;
 text-align: center;
 line-height: 56px;
+
+${MediaQuery()`
+  grid-column: 1;
+  grid-row: 3;
+  justify-self: center;
+`}
 `
 
 export default SiteHero

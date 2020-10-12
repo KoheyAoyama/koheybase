@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { MediaQuery } from "../utils/mediaquery"
 
 const WorksPlaceholder = () => (
     <Root>
@@ -21,6 +22,10 @@ const Root = styled.div`
     border: solid 1px rgba(0, 0, 0, 0.12);
     border-radius: 24px;
     text-align: center;
+
+    ${MediaQuery()`
+        height: 70vw;
+    `}
 `
 
 const Message = styled.p`
