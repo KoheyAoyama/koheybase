@@ -29,13 +29,14 @@ padding: 0 16px;
 display: grid;
 grid-template-rows: 1fr 1fr;
 grid-template-columns: repeat(12, 1fr);
-grid-gap: 16px;
+grid-gap: 32px;
 
 ${MediaQuery()`
   margin-bottom: 40px;
   padding: 48px 16px 0 16px;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: 1fr;
+  grid-gap: 16px;
 `}
 `
 
