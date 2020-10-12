@@ -62,9 +62,13 @@ ${MediaQuery()`
 `
 
 const PostTitle = styled.h1`
-font-size: 4.4rem;
+font-size: 3.4rem;
 font-weight: bold;
 margin-bottom: 16px;
+
+${MediaQuery()`
+font-size: 2.8rem;
+`}
 `
 
 const PostThumbnailWrapper = styled.p`
