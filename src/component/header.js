@@ -95,7 +95,6 @@ const Root = styled.header`
     ${MediaQuery()`
         height: 72px;
         padding: 0 16px;
-        box-shadow: none;
     `}
 `
 
@@ -117,20 +116,22 @@ const Header__Navigation = styled.ul`
     list-style: none;
 
     ${MediaQuery()`
+        display: none;
         position: absolute;
-        top: -90px;
+        top: 72px;
         left: 0;
         z-index: -1;
         width: 100vw;
-        height: 20vh;
-        padding-top: 16px;
+        height: auto;
+        padding-top: 8px;
+        padding-bottom: 24px;
         flex-direction: column;
-        background-color: white;
-        box-shadow: rgba(0, 0, 0, 0.10) 0px 2px 8px;
+        background-color: rgba(255, 255, 255, 1.0);
+
     `}
 
     ${props => props.open && css`
-        top: 72px !important;
+        display: block !important;
     `}
 `
 

@@ -42,7 +42,7 @@ ${MediaQuery()`
 const HeroTesxtWrapper = styled.div`
 grid-row: 1;
 grid-column: 1 / 12;
-align-self: end;\
+align-self: end;
 
 ${MediaQuery()`
   grid-column: 1;
@@ -53,11 +53,20 @@ const HeroTitle = styled.h2`
 font-size: 4.8rem;
 font-weight: bold;
 margin-bottom: 12px;
+
+${MediaQuery()`
+  font-size: 10vw;
+  line-height: 1.3;
+`}
 `
 
 const HeroSubTitle = styled.p`
 font-size: 2.0rem;
 line-height: 1.7;
+
+${MediaQuery()`
+  font-size: 5vw;
+`}
 `
 
 const HeroButton = styled(props => <Link {...props} />)`
