@@ -29,10 +29,9 @@ padding: 0 16px;
 display: grid;
 grid-template-rows: 1fr 1fr;
 grid-template-columns: repeat(12, 1fr);
-grid-gap: 32px;
+grid-gap: 16px;
 
 ${MediaQuery()`
-  height: 80vh;
   padding: 48px 16px 0 16px;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: 1fr;

@@ -153,6 +153,9 @@ const NavigationItem = styled.li`
 `
 
 const NavigationText = styled(props => <Link {...props} />)`
+    display: block;
+    width: 100%;
+    height: 100%;
     font-size: 2.0rem;
     font-weight: bold;
     color: black;

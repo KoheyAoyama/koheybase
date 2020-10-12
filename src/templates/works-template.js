@@ -4,6 +4,7 @@ import styled from "styled-components"
 import SEO from "../component/seo"
 import Layout from "../component/layout"
 import Tag from "../component/tag"
+import { MediaQuery } from "../utils/mediaquery"
 
 const ArticlePost = props => {
     const post = props.data.microcmsWorks
@@ -15,16 +16,19 @@ const ArticlePost = props => {
             />
             <Root>
                 <ContentWrapper>
+                    <PostThumbnailWrapper>
+                        <PostThumbnail src={post.thumbnail.url} alt=""/>
+                    </PostThumbnailWrapper>
+
                     <PostTitle>{post.title}</PostTitle>
 
                     {post.category.map((category, index) => (
                         <Tag content={category} key={index} />
                     ))}
                     <Margin16 />
+                    <Margin16 />
 
-                    <PostThumbnailWrapper>
-                        <PostThumbnail src={post.thumbnail.url} alt=""/>
-                    </PostThumbnailWrapper>
+                    
                     <PostBody
                         dangerouslySetInnerHTML={{
                             __html: `${post.body}`,
@@ -40,11 +44,21 @@ const Root = styled.section`
 display: grid;
 grid-template-columns: repeat(12, 1fr);
 grid-gap: 32px;
+
+${MediaQuery()`
+    grid-template-columns: 1fr;
+`}
 `
 
 const ContentWrapper = styled.div`
 grid-column: 3 / span 8;
 margin-top: 80px;
+
+${MediaQuery()`
+    grid-column: 1;
+    margin-top: 40px;
+    padding: 0 16px;
+`}
 `
 
 const PostTitle = styled.h1`
@@ -57,7 +71,7 @@ const PostThumbnailWrapper = styled.p`
 position: relative;
 width: 100%;
 height: auto;
-margin-bottom: 64px;
+margin-bottom: 32px;
 
 &:after {
     content: '';
@@ -189,7 +203,7 @@ const PostBody = styled.div`
 `
 
 const Margin16 = styled.div`
-heigth: 16px;
+height: 16px;
 `
 
 export const query = graphql`

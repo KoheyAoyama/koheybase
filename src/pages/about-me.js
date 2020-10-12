@@ -1,7 +1,9 @@
 import React from "react"
+import Media from "react-media"
 import styled from "styled-components"
 import Layout from "../component/layout"
 import SEO from "../component/seo"
+import { MediaQuery } from "../utils/mediaquery"
 
 const AboutMe = () => (
     <Layout>
@@ -14,7 +16,10 @@ const AboutMe = () => (
             <PageTitle>About Me</PageTitle>
 
             <ContentWrapper>
-                <Profileimage src={`../../img_myProfile.png`} alt="青山広平のプロフィール画像" />
+                <ProfileImageWrapper>
+                    <Profileimage src={`../../img_myProfile.png`} alt="青山広平のプロフィール画像" />
+                </ProfileImageWrapper>
+                <Margin32 />
                 
                 <ProfileName>
                     青山広平
@@ -87,22 +92,55 @@ grid-template-rows: 1fr;
 grid-template-columns: repeat(12, 1fr);
 grid-gap: 32px;
 margin-top: 80px;
+
+${MediaQuery()`
+grid-template-columns: 1fr;
+margin-top: 40px;
+`}
 `
 
 const PageTitle = styled.h1`
 grid-column: 1 / span 3;
 font-size: 4.0rem;
 font-weight: bold;
+
+${MediaQuery()`
+    grid-column: 1;
+`}
 `
 
 const ContentWrapper = styled.div`
 grid-column: 4 / 12;
+
+${MediaQuery()`
+    grid-column: 1;
+`}
+`
+
+const ProfileImageWrapper = styled.div`
+    position: relative;
+    width: 320px;
+    height: auto;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-top: 100%;
+    }
+
+    ${MediaQuery()`
+        width: 100%;
+        height: 100%;
+    `}
 `
 
 const Profileimage = styled.img`
-width: 320px;
-height: 320px;
-margin-bottom: 40px;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
 object-fit: contain;
 `
 
