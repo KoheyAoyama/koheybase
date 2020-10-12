@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Koheybase.com`,
+    title: `koheybase.com`,
     description: `UIデザイナー 青山広平のポートフォリオ`,
     author: `Kohey Aoyama`,
     siteUrl: `https://koheybase.com/`,
