@@ -15,8 +15,8 @@ const Header = () => {
             </HeaderTitle>
             
             <Media queries={{
-                small: "(max-width: 768px)",
-                large: "(min-width: 769px)"
+                large: "(min-width: 769px)",
+                small: "(max-width: 768px)"
             }}>
                 {matches => (
                     <Fragment>
