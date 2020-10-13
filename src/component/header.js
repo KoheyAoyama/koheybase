@@ -20,6 +20,16 @@ const Header = () => {
             }}>
                 {matches => (
                     <Fragment>
+                        {matches.large &&
+                            <Header__Navigation>
+                                <NavigationItem>
+                                    <NavigationText to="/">Home</NavigationText>
+                                </NavigationItem>
+                                <NavigationItem>
+                                    <NavigationText to="/about-me/">About Me</NavigationText>
+                                </NavigationItem>
+                            </Header__Navigation>
+                        }
                         {matches.small &&
                             <div>
                                 <div
@@ -62,16 +72,6 @@ const Header = () => {
                                 }
                                 
                             </div>
-                        }
-                        {matches.large &&
-                            <Header__Navigation>
-                                <NavigationItem>
-                                    <NavigationText to="/">Home</NavigationText>
-                                </NavigationItem>
-                                <NavigationItem>
-                                    <NavigationText to="/about-me/">About Me</NavigationText>
-                                </NavigationItem>
-                            </Header__Navigation>
                         }
                     </Fragment>
                 )}
