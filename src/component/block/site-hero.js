@@ -32,7 +32,7 @@ grid-template-columns: repeat(12, 1fr);
 grid-gap: 32px;
 
 ${MediaQuery()`
-  height: 84vh;
+  height: 74vh;
   margin-bottom: 88px;
   padding: 48px 16px 0 16px;
   grid-template-rows: 1fr 56px 56px;
