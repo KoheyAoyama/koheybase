@@ -12,20 +12,31 @@ const WorksPlaceholder = () => (
 )
 
 const Root = styled.div`
+    position: relative;
     display: grid;
     justify-items: center;
     align-items: center;
     position: relative;
     width: 100%;
-    height: 100%;
+    height: auto;
     background: transparent;
     border: solid 1px rgba(0, 0, 0, 0.12);
     border-radius: 24px;
     text-align: center;
 
-    ${MediaQuery()`
-        height: 70vw;
-    `}
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        padding-top: 85%;
+    }
+
+    & > div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 `
 
 const Message = styled.p`

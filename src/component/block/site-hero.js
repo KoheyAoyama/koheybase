@@ -32,9 +32,10 @@ grid-template-columns: repeat(12, 1fr);
 grid-gap: 32px;
 
 ${MediaQuery()`
-  margin-bottom: 40px;
+  height: 84vh;
+  margin-bottom: 88px;
   padding: 48px 16px 0 16px;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 1fr 56px 56px;
   grid-template-columns: 1fr;
   grid-gap: 16px;
 `}
@@ -47,6 +48,7 @@ align-self: end;
 
 ${MediaQuery()`
   grid-column: 1;
+  align-self: start;
 `}
 `
 
