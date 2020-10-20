@@ -34,21 +34,26 @@ const Root = styled.article`
     width: 100%;
     height: auto;
     border-radius: 16px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-    opacity: 1.0;
-    transition-duration: 200ms;
-    transition-timing-function: ease-in-out;
-
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 2px 8px;
+    transform:
+        perspective(800px)
+        rotateY(25deg)
+        scale(0.9)
+        rotateX(10deg);
+    filter: blur(1px);
+    opacity: 0.5;
+    transition: 0.6s ease all;
+    
     &:hover {
-        opacity: 0.8;
-        transition-duration: 200ms;
-        transition-timing-function: ease-in-out;
-
-        & * img {
-            transform: scale(1.1);
-            transition-duration: 200ms;
-            transition-timing-function: ease-in-out;
-        }
+        box-shadow: rgba(0, 0, 0, 0.10) 0px 8px 24px;
+        transform:
+            perspective(800px)
+            rotateY(-15deg)
+            translateY(-15px)
+            rotateX(10deg)
+            scale(1.08);
+        filter: blur(0);
+        opacity: 1;
     }
 `
 
