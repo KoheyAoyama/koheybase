@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import Tag from "./tag"
+import { MediaQuery } from "../utils/mediaquery"
 
 const CardItem = (props) => {
 
@@ -40,7 +41,6 @@ const Root = styled.article`
         rotateY(25deg)
         scale(0.9)
         rotateX(10deg);
-    filter: blur(1px);
     opacity: 0.5;
     transition: 0.6s ease all;
     
@@ -52,9 +52,32 @@ const Root = styled.article`
             translateY(-15px)
             rotateX(10deg)
             scale(1.08);
-        filter: blur(0);
         opacity: 1;
     }
+
+    ${MediaQuery()`
+        margin-bottom: 24px;
+        box-shadow: rgba(0, 0, 0, 0.10) 0px 8px 24px;
+        transform:
+            perspective(800px)
+            translateX(-10px)
+            rotateX(10deg)
+            rotateY(-15deg)
+            scale(1.0);
+        opacity: 1;
+
+        &:nth-child(2n) {
+            margin-bottom: 24px;
+            box-shadow: rgba(0, 0, 0, 0.10) 0px 8px 24px;
+            transform:
+                perspective(800px)
+                translateX(10px)
+                rotateX(10deg)
+                rotateY(15deg)
+                scale(1.0);
+            opacity: 1;
+        }
+    `}
 `
 
 const BodyWrapper = styled(props => <Link {...props} />)`

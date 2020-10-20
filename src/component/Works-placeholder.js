@@ -23,12 +23,18 @@ const Root = styled.div`
     border: solid 1px rgba(0, 0, 0, 0.12);
     border-radius: 24px;
     text-align: center;
+    transform: scale(0.84);
+    transition: 0.6s ease all;
 
     &:after {
         content: "";
         display: block;
         width: 100%;
         padding-top: 85%;
+    }
+
+    &:hover {
+        transform: scale(0.9);
     }
 
     & > div {
